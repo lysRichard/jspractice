@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul li{
+			float: left;
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			background: red;
+			filter: alpha(opacity:30);
+			opacity: 0.3;
+			margin-left: 20px;
+		}
+	</style>
+	<script type="text/javascript" src="运动框架.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+		var ali=document.getElementsByTagName('li');
+		for(var i=0;i<ali.length;i++){
+			ali[i].timer=null;
+			ali[i].onmouseover=function(){
+			startMove(this,'height',400,function(){
+				startMove(this,'width',400);
+			});
+		}
+			ali[i].onmouseout=function(){
+			startMove(this,'height',50);
+			}
+	}
+}
+
+
+	</script>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

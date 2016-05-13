@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		input{
+			margin-top: 15px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="新建" onclick="openbtn()"><br>
+	<input type="button" value="关闭" onclick="closebtn()"><br>
+	<input type="button" value="moveTo移动" onclick="moveToBtn()"><br>
+	<input type="button" value="moveBy新建" onclick="moveByBtn()"><br>
+	<input type="button" value="新建"><br>
+	<input type="button" value="新建"><br>
+	<script type="text/javascript">
+		// var co=confirm("大师兄，师傅不见了")
+		// if(co){
+		// 	alert("去找吧")
+		// }else{
+		// 	alert("分行李回家吧");
+		// }
+		// setInterval(function fu(){
+		// 	document.write("过一秒后我会出现");
+		// },1000)
+		var newopen;
+		function openbtn(){
+			newopen=open('','','width=100,heigth=100,top=100,left=100')
+		}
+		function closebtn(){
+			newopen.close();
+		}
+		function moveToBtn(){
+			newopen.moveTo(300,300)
+			newopen.focus()
+		}
+		function moveByBtn(){
+			newopen.moveBy(30,30)
+			newopen.focus()
+		}
+	</script>
+</body>
+</html>

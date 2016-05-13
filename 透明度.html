@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+			filter: alpha(opacity:30);
+			opacity: 0.3;
+			margin: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	window.onload=function(){
+        var oDIV=document.getElementsByTagName('div');
+        for (var i = 0; i < oDIV.length; i++) {
+            oDIV[i].alpha=30;
+            oDIV[i].onmouseout=function(){
+                onMove(this,30);
+            }
+            oDIV[i].onmouseover=function(){
+                onMove(this,100);
+            }
+        }
+    }
+    function onMove(obj,iTarget){
+        clearInterval(obj.timer);
+        obj.timer=setInterval(function(){
+            var speed=0;
+            speed=(iTarget-obj.alpha)/10;
+            if (obj.alpha==iTarget) {
+                clearInterval(obj.timer);
+            }
+            else{
+                obj.alpha+=speed;
+                obj.style.opacity=obj.alpha/100;
+                obj.style.filter="alpha(opacity:"+obj.alpha+")";
+            }
+        },30)
+    }
+</script>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

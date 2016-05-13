@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="" style="text-overflow: ellipsis;"></a>
+	<script type="text/javascript">
+
+		// function toDate(param){
+		// 	if(typeof(param)=='string'||typeof(param)=='number'){
+		// 		return new Date(param);
+		// 	}if(param instanceof Array){
+		// 			var date=new Date(0);
+		// 			date.setYear(param[0]);
+		// 			date.setMonth(param[1]-1);
+		// 			date.setDate(param[2]);
+		// 			return date;
+		// 		}
+		// 	}if(param instanceof Object){
+		// 		var date=new Date(0);
+		// 		date.setYear(param.y);
+		// 		date.setMonth(param.m-1);
+		// 		date.setDate(param.z);
+		// 		return date;
+		// 	}else{
+		// 		return -1;
+		// 	}
+		// }
+		// window.onload=function(){
+		// 	var date='2005-8-23';
+		// 	alert(toDate(date));
+		// }
+		var myNumber = {
+  value: 1,
+  add: function(i){
+      var that = this;
+    var helper = function(i){
+        console.log(that);
+          that.value += i;
+    }
+    helper(i);
+  }
+}
+myNumber.add(1);
+console.log(myNumber.value)
+	</script>
+</body>
+</html>

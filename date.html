@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var mydate=new Date();
+		function padding(number){
+			return number>10?number:"0"+number;
+		}
+		function format(mydate){
+			return mydate.getFullYear()+"-"+padding((mydate.getMonth()+1))+"-"+padding(mydate.getDate())+" "+padding(mydate.getHours())+":"+padding(mydate.getMinutes())+":"+padding(mydate.getSeconds())
+		}
+		function getDays(year,month){
+			var date=new Date(year,month,0);
+			return date.getDate();
+		}
+		alert("2月有"+getDays(2010,2)+"天")
+		alert(mydate);
+		alert(format(mydate));
+		alert("今天是"+mydate.getFullYear()+"年"+(mydate.getMonth()+1)+"月"+mydate.getDate()+"日");
+		alert("现在是北京时间"+mydate.getHours()+"时"+mydate.getMinutes()+"分"+mydate.getSeconds()+"秒")
+	</script>
+</body>
+</html>

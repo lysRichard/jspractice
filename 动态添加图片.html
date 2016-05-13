@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		input[type='button']{
+			width: 60px;height: 60px;
+			border-radius: 30px;
+			outline: none;
+		}
+		img{
+			display: none;
+			border-width: 5px;
+			border-color: orange;
+			border-style: groove;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" placeholder="请添加图片地址" id="imgURL"><br>
+	<input type="button" value="轮播" onclick="autoPlay()">
+	<input type="button" value="添加图片" onclick="addImg()"><br>
+	<img src="" alt="" height="300" id="img">
+	<script type="text/javascript">
+		
+		var imgArr=new Array('G:\Sublime Text\html\images\img_03.jpg','G:\Sublime Text\html\images\img_04.jpg','G:\Sublime Text\html\images\img_05.jpg');
+		var index=0;
+		setInterval(function autoPlay(){
+			
+			var img=document.getElementById('img');
+			img.style.display='inline';
+			if(imgArr.length<=0)
+			{
+				alert("没有图片了，请添加图片！");
+			}else{
+				index=(index+1)%imageArr.length;
+				var imgId=imgArr[index];
+				img.setAttribute('src','imgId')
+			}
+		},1000)
+		function addImg(){
+			var imgurl=document.getElementById('imgURL').value;
+			imgArr.push(imgurl);
+		}
+
+	</script>
+</body>
+</html>

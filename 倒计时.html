@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	window.onload=setInterval(function(){
+		var now=new Date();
+		var endtime=new Date("2016,12,12");
+		var times=parseInt((endtime.getTime()-now.getTime())/1000);
+		var days=parseInt(times/(24*3600));
+		var hours=parseInt(times%(24*3600)/3600);
+		var minutes=parseInt(times%(24*3600)%3600/60);
+		var seconds=parseInt(times%(24*3600)%3600%60);
+		var mytime=document.getElementById('mytime');
+		if(minutes<10)
+		{
+			minutes="0"+minutes;
+		}
+		if(seconds<10)
+		{
+			seconds="0"+seconds;
+		}
+		mytime.innerHTML="据今天还有"+days+"天"+hours+"时"+minutes+"分"+seconds+"秒";
+	},1000)
+</script>
+	<span id="mytime"></span>
+</body>
+</html>

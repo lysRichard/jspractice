@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul li{
+		list-style: none;
+		width: 200px;
+		height: 50px;
+		background: yellow;
+		margin-top: 20px;
+		border: 1px solid #E8E8E8;
+	}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var ali=document.getElementsByTagName('li');
+		for(var i=0;i<ali.length;i++){
+			ali[i].timer=null;
+			ali[i].onmouseover=function(){
+			startMove(this,'height',400);
+		}
+			ali[i].onmouseout=function(){
+			startMove(this,'height',50);
+			}
+	}
+}
+	function startMove(obj1,attr,iTarget,fn){
+		clearInterval(obj1.timer);
+		obj1.timer=setInterval(function(){
+			var icur=0;
+			if(attr=='opacity'){
+				icur=Math.round(parseFloat(getStyle(obj1,attr))*100);
+			}else{
+				icur=parseInt(getStyle(obj1,attr));
+			}
+			var speed=(iTarget-icur)/8;
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			if(icur==iTarget){
+				clearInterval(obj1.timer);
+				if(fn){
+					fn();
+				}
+			}else{
+				if(attr=='opacity'){
+					obj1.style.filter='alpha(opacity:'+(icur+speed)+')'
+					obj1.style.opacity=(icur+speed)/100;
+				}else{
+					obj1.style[attr]=icur+speed+'px';
+				}
+				
+			}
+		},30)
+	}
+	
+	function getStyle(obj1,attr){
+		if(obj1.currentStyle){
+			return obj1.currentStyle[attr];
+		}else{
+			return getComputedStyle(obj1,false)[attr]
+		}
+	}
+</script>
+</head>
+<body>
+
+<div>
+	<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+</div>
+		
+</body>
+</html>

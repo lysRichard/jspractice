@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="text" id="mobile" onblur="check(this)" onfocus="reset(this)">
+	<script type="text/javascript">
+	// function ratio(students){
+	// 	var malecount,
+	// 		femalecount,
+	// 		student,
+	// 		rate,
+	// 		length=student.length;
+	// 	for(var i=0;i<length;i++){
+	// 		student=students[i];
+	// 	}
+	// 	if(student.gender===1){
+	// 		malecount++;
+	// 	}else
+	// 	{
+	// 		femalecount++;
+	// 	}
+	// 	rate=malecount/femalecount;
+	// 	return rate;
+	// }
+	// function add(){
+	// 	var length=arguments.length;
+	// 	var sum=0;
+	// 	var num;
+	// 	for(var i=0;i++;i<length){
+	// 		num=arguments[i];
+	// 		sum=sum+num;
+	// 	}
+		
+	// 	return sum;
+
+	// }
+	// function check(mobileInput){
+	// 	var value=mobileInput.value;
+	// 	if(!/^1\d{10}$/.test(value)){
+	// 		mobileInput.style.borderColor="red";
+	// 	}
+	// }
+	// function reset(){
+	// 	mobileInput.style.borderColor="";
+	// }
+	var Url="http://www.163.com/album?id=1#comment";
+	var arr=Url.match(/(^http?:)\/\/([^\/]+)([^\?]*)([^#]*)(.*)/);
+	var post=arr[1],
+		host=arr[2],
+		pathname=arr[3],
+		search=arr[4],
+		hash=arr[5];
+		alert(post);
+	</script>
+</body>
+</html>

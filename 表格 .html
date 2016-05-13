@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function (){
+			var oTab=document.getElementById('tab1');
+			var oBtn=document.getElementById('btn');
+			var oName=document.getElementById('name');
+			var oAge=document.getElementById('age');
+			var id=oTab.tBodies[0].rows.length+1;
+
+			oBtn.onclick=function(){
+				var oTr=document.createElement('tr');
+
+				var oTd=document.createElement('td');
+				oTd.innerHTML=id++;
+				oTr.appendChild(oTd);
+
+				var oTd=document.createElement('td');
+				oTd.innerHTML=oName.value;
+				oTr.appendChild(oTd);
+
+				var oTd=document.createElement('td');
+				oTd.innerHTML=oAge.value;
+				oTr.appendChild(oTd);
+
+				var oTd=document.createElement('td');
+				oTd.innerHTML='<a href="#">删除</a>';
+				oTr.appendChild(oTd);
+				oTd.getElementsByTagName('a')[0].onclick=function (){
+					oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+				}
+
+				oTab.appendChild(oTr);
+
+
+			}
+
+			// alert(oTab.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[0].getElementsByTagName('td')[1].innerHTML)
+			// alert(oTab.tBodies[0].rows[0].cells[1].innerHTML);
+		// 	for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+		// 		if(i%2==0){
+		// 			oTab.tBodies[0].rows[i].style.background="#CCC"
+		// 		}else{
+		// 			oTab.tBodies[0].rows[i].style.background="";
+		// 		}
+
+		// 	}
+		}
+	</script>
+</head>
+<body >
+	姓名：<input id="name" type="text">
+	年龄：<input id="age" type="text">
+	<input id="btn" type="button" value="添加">
+	<table border="1" id="tab1">
+		<thead>
+			<td>学号</td>
+			<td>姓名</td>
+			<td>年龄</td>
+			<td>操作</td>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>张三</td>
+				<td>12</td>
+				<td><a href="#">删除</a></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>李四</td>
+				<td>22</td>
+				<td><a href="#">删除</a></td>
+
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>王五</td>
+				<td>12</td>
+				<td><a href="#">删除</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

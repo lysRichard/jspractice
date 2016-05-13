@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	    var st="";
+		var arr=['一','二','三','四','五','六','七','八','九','十'];
+		for(var i=1;i<=9;i++)
+		{
+			for(var j=1;j<=i;j++)
+			{
+				var str0="";
+				if(i*j<10)
+				{
+					str0="得"+arr[i*j-1]+"&nbsp";
+
+				}
+				else if(i*j==10)
+				{
+					str0="一十"+"&nbsp";
+				}
+				else if(i*j<20)
+				{
+					str0="十"+arr[i*j%10-1]+"&nbsp";
+				}
+
+				else if(i*j==20)
+				{
+					str0="二十"+"&nbsp";
+				}
+				else if(i*j<30)
+				{
+					str0="二"+arr[i*j%10-1]+"&nbsp";
+				}
+				else if(i*j==30)
+				{
+					str0="三十"+"&nbsp";
+				}
+				else if(i*j<40)
+				{
+					str0="三"+arr[i*j%10-1]+"&nbsp";
+				}
+				else if(i*j==40)
+				{
+					str0="四十"+"&nbsp";
+				}
+				else if(i*j<50)
+				{
+					str0="四"+arr[i*j%10-1]+"&nbsp";
+				}
+				else if(i*j<60)
+				{
+					str0="五"+arr[i*j%10-1]+"&nbsp";
+				}
+				else if(i*j<70)
+				{
+					str0="六"+arr[i*j%10-1]+"&nbsp";
+				}
+				else if(i*j<80)
+				{
+					str0="七"+arr[i*j%10-1]+"&nbsp";
+				}
+				else if(i*j<90)
+				{
+					str0="八"+arr[i*j%10-1]+"&nbsp";
+				}
+				st+=arr[j-1]+arr[i-1]+str0+"&nbsp";
+			}
+			st+="<br><br>";
+		}
+		document.write(st);
+	</script>
+</body>
+</html>

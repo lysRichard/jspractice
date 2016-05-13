@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// var timeId=setInterval(function clock(){
+		// 	var mydate=new Date();
+		// 	var hours=mydate.getHours();
+		// 	var minutes=mydate.getMinutes();
+		// 	var seconds=mydate.getSeconds();
+		// 	var str="当前时间:";
+		// 	if(hours>12){
+		// 		str+="上午";
+		// 	}else{
+		// 		str+="下午";
+		// 	}
+		// 	str+=hours+"时"+minutes+"分"+seconds+"秒";
+		// 	var time=document.getElementById('clock');
+		// 	time.value=str;
+		// },1000)
+		// function circle(){
+		// 	var radius=prompt('请输入圆的半径','0');
+		// 	var r=parseFloat(radius);
+		// 	var size=Math.PI*r*r;
+		// 	alert(size)
+		// 	var co=confirm('您对结果满意吗？');
+		// 	if(co){
+		// 		alert('感谢您的评价！');
+		// 	}else{
+		// 		prompt("请提出改进意见！",'')
+		// 	}
+		// }
+		
+	</script>
+	<script type="text/javascript">
+		var guojing=new Object();
+			guojing.name="郭靖"
+			guojing.HP=500;
+			guojing.gj=90;
+			guojing.sd=60;
+			guojing.skill=new Array('亢龙有悔','飞龙在天','见龙在田','鸿渐于陆','潜龙勿用');
+
+		var ouyang=new Object();
+			ouyang.name='欧阳锋';
+			ouyang.HP=800;
+			ouyang.gj=100;
+			ouyang.sd=40;
+			ouyang.skill=new Array('灵蛇棍法','凤凰神力','颠倒阴阳','逆转静脉','天蟾神功');
+
+		function whoGjwho(a,b){
+	  		return a.sd*Math.random()>b.sd*Math.random()?[a,b]:[b,a]
+	  	}
+
+
+		var hh=setInterval(function game(){
+			var fight=whoGjwho(guojing,ouyang);
+			var attacker=fight[0];
+			var defender=fight[1];
+			var skillIndex=Math.floor(Math.random()*4);
+			var damage=Math.ceil(attacker.gj*Math.random());
+			defender.HP-=damage;
+			document.write(attacker.name+"使用了一招"+attacker.skill[skillIndex]+"攻击"+defender.name+",造成了"+damage+"点伤害"+"<br>");
+			document.write(defender.name+"损失了"+damage+"点生命"+"<br>");
+			if(defender.HP>0){
+				document.write(defender.name+"剩余生命"+defender.HP+"<br><br>")
+			}else{
+				alert(attacker.name+"获得了胜利！")
+				clearInterval(hh);
+			}
+		},1000)
+		
+
+		game();
+
+	</script>
+	<!-- <input type="text" id="clock" size="100"><br>
+	<input type="button" id="clearClock" size="40" value="清除计时" onclick="clearInterval(timeId)"> -->
+	<!-- <input type="button" value="计算圆的面积" onclick="circle()"> -->
+	
+</body>
+</html>
